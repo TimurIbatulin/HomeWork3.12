@@ -25,24 +25,23 @@
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-
-list = []
-l = int(input('введите желаемую длинну списка - '))
-for k in range(l):
-    k = input(f'Введите {k+1} значение cписка (целое число) - ')
-    list.append(k)
-print(list, end='=>')
-d = 1
-w = int(-1)
-h = int(l/2)
-for u in range(h):
-    d = int(list[u])*int(list[w])
-    w -=1
-    print(d, end=' ')
-if l%2==1:    
-    w = int(l/2)
-    d = int(list[w])**2
-    print(d)
+# list = []
+# l = int(input('введите желаемую длинну списка - '))
+# for k in range(l):
+#     k = input(f'Введите {k+1} значение cписка (целое число) - ')
+#     list.append(k)
+# print(list, end='=>')
+# d = 1
+# w = int(-1)
+# h = int(l/2)
+# for u in range(h):
+#     d = int(list[u])*int(list[w])
+#     w -=1
+#     print(d, end=' ')
+# if l%2==1:    
+#     w = int(l/2)
+#     d = int(list[w])**2
+#     print(d)
     
 
 
@@ -55,7 +54,28 @@ if l%2==1:
 # Пример:
 # - [1.1, 1.2, 3.1, 10.01] => 0.19
 
-
+list = []
+y = int(input('Введите количество чисел в списке - '))
+for x in range(y):
+    x = input(f'Введите {x+1} вещественное число списка - ')
+    list.append(x)
+print(list, end='=>')
+w = 0
+r = 0
+min = float(list[0])
+max = 0
+t = 0
+for l in range(y):
+    w = float(list[l])*10//10
+    r = float(list[l])-w
+    if r < min:
+        min = r
+    elif r > max:
+        max = r
+print(max)
+print(min)
+t = round(max - min, 2)
+print(t)
 
 
 # 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
