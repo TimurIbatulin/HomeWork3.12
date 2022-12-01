@@ -1,41 +1,51 @@
 # 1. Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной идексах.
 # Пример:
 # [2, 3, 5, 9, 3] -> на нечётных идексах элементы 3 и 9, ответ: 12
-a = []
-y = int(input('Введите значение длинны массива - '))
-for k in range(y):
-    k = input(f'Введите {k+1} значания списка- ')
-    a.append(k)
-print(f'{a} на нечетных позициях', end=' ')
-sum = 0
-i = 0
-for z in a:
-    if i != 0:
-        if i%2 != 0:
-            print(z, end=' ')
-            if z.isdigit():
-                sum += int(z)
-    i += 1
-print(f'ответ: {sum}')
+# a = []
+# y = int(input('Введите значение длинны массива - '))
+# for k in range(y):
+#     k = input(f'Введите {k+1} значания списка- ')
+#     a.append(k)
+# print(f'{a} на нечетных позициях', end=' ')
+# sum = 0
+# i = 0
+# for z in a:
+#     if i != 0:
+#         if i%2 != 0:
+#             print(z, end=' ')
+#             if z.isdigit():
+#                 sum += int(z)
+#     i += 1
+# print(f'ответ: {sum}')
 
-# n = input()
- 
-# suma = 0
-# mult = 1
- 
-# for digit in n:
-#     if digit.isdigit():
-#         suma += int(digit)
-#         mult *= int(digit)
- 
-# print("Сумма:", suma)
-# print("Произведение:", mult)
 
 
 # 2. Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 # Пример:
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
+
+
+list = []
+l = int(input('введите желаемую длинну списка - '))
+for k in range(l):
+    k = input(f'Введите {k+1} значение cписка (целое число) - ')
+    list.append(k)
+print(list, end='=>')
+d = 1
+w = int(-1)
+h = int(l/2)
+for u in range(h):
+    d = int(list[u])*int(list[w])
+    w -=1
+    print(d, end=' ')
+if l%2==1:    
+    w = int(l/2)
+    d = int(list[w])**2
+    print(d)
+    
+
+
 
 
 
