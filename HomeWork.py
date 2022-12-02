@@ -54,28 +54,26 @@
 # Пример:
 # - [1.1, 1.2, 3.1, 10.01] => 0.19
 
-list = []
-y = int(input('Введите количество чисел в списке - '))
-for x in range(y):
-    x = input(f'Введите {x+1} вещественное число списка - ')
-    list.append(x)
-print(list, end='=>')
-w = 0
-r = 0
-min = float(list[0])
-max = 0
-t = 0
-for l in range(y):
-    w = float(list[l])*10//10
-    r = float(list[l])-w
-    if r < min:
-        min = r
-    elif r > max:
-        max = r
-print(max)
-print(min)
-t = round(max - min, 2)
-print(t)
+# list = []
+# y = int(input('Введите количество чисел в списке - '))
+# for x in range(y):
+#     x = input(f'Введите {x+1} вещественное число списка - ')
+#     list.append(x)
+# print(list, end='=>')
+# w = 0
+# r = 0
+# min = float(list[0])
+# max = 0
+# t = 0
+# for l in range(y):
+#     w = float(list[l])*10//10
+#     r = float(list[l])-w
+#     if r < min:
+#         min = r
+#     elif r > max:
+#         max = r
+# t = round(max - min, 2)
+# print(t)
 
 
 # 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
@@ -83,6 +81,24 @@ print(t)
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
+y = int(input('Введите число переводимое в двоичный код - '))
+z = 2
+t = str()
+list = []
+while y > 1:
+    z = y%2
+    y = int(y/2)
+    t = t + str(z)
+    # list.append(z)
+    # t += 1
+    # print(z, end='')
+if y == 1:
+    t = t + str(y)
+    #  list.append(y)
+    # print(y)
+# list.reverse()
+reversedstring=''.join(reversed(t))
+print(reversedstring)
 
 
 
