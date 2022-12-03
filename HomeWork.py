@@ -1,6 +1,8 @@
 # 1. Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной идексах.
 # Пример:
 # [2, 3, 5, 9, 3] -> на нечётных идексах элементы 3 и 9, ответ: 12
+
+
 # a = []
 # y = int(input('Введите значение длинны массива - '))
 # for k in range(y):
@@ -44,12 +46,6 @@
 #     print(d)
     
 
-
-
-
-
-
-
 # 3. Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
 # Пример:
 # - [1.1, 1.2, 3.1, 10.01] => 0.19
@@ -81,30 +77,51 @@
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
-y = int(input('Введите число переводимое в двоичный код - '))
-z = 2
-t = str()
-list = []
-while y > 1:
-    z = y%2
-    y = int(y/2)
-    t = t + str(z)
-    # list.append(z)
-    # t += 1
-    # print(z, end='')
-if y == 1:
-    t = t + str(y)
-    #  list.append(y)
-    # print(y)
-# list.reverse()
-reversedstring=''.join(reversed(t))
-print(reversedstring)
 
 
-
-
+# y = int(input('Введите число переводимое в двоичный код - '))
+# z = 2
+# t = str()
+# list = []
+# while y > 1:
+#     z = y%2
+#     y = int(y/2)
+#     t = t + str(z)
+# if y == 1:
+#     t = t + str(y)
+# reversedstring=''.join(reversed(t))
+# print(reversedstring)
 
 
 # 5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 # Пример:
 # - для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] 
+
+f = int(input('Введите число для расчета числа Фибоначи-'))
+f_min = None
+f_max = None
+f_n2 = 1
+f_n1 = 0
+box = 0
+fibonachi = []
+if f < 0:
+     f = f * -1
+for x in range(f):
+    box = f_n2 - f_n1
+    fibonachi.append(box)
+    f_n2 = f_n1
+    f_n1 = box
+# print(fibonachi)
+fibonachi.reverse()
+# print(fibonachi)
+fibonachi.append(0)
+f_n2 = 1
+f_n1 = 0
+for z in range(f-1):
+    box = f_n2 +f_n1
+    fibonachi.append(box)
+    f_n1 = f_n2
+    f_n2 = box
+print(f'для к = {f} список будет выглядеть так:',fibonachi)
+
+
